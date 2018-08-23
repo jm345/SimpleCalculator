@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Calculator"
+             x:Class="Calculator.MainPage"
+             BackgroundColor="Black">
+
+    <StackLayout Margin="20,20,20,20">
+        <!-- Place new controls here -->
+        
+
+        <Label x:Name="pastExpression" TextColor="White" FontSize="25" LineBreakMode="TailTruncation"/>
+        <Label x:Name="currentExpression" TextColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" FontSize="75" VerticalTextAlignment="Center" LineBreakMode="HeadTruncation"/>
+        <BoxView BackgroundColor="White" HeightRequest="3"/>
+
+        <Grid HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+            </Grid.ColumnDefinitions>
+
+            <!--Memory Buttons-->
+            <Button Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" Text="M+" FontSize="25" Clicked="Memory_Clicked"/>
+            <Button Grid.Row="0" Grid.Column="1" Text="M" FontSize="25" Clicked="Memory_Clicked"/>
+            <Button Grid.Row="0" Grid.Column="0" Text="M-" FontSize="25" Clicked="Memory_Clicked"/>
+
+            <!--Number Buttons-->
+            <Button Grid.Row="5" Grid.Column="1" Text="." BackgroundColor="Gray" TextColor="White" FontSize="50" Clicked="Button_Clicked"/>
+            <Button Grid.Row="5" Grid.Column="0" Text="0" BackgroundColor="Gray" TextColor="White" FontSize="50" Clicked="Button_Clicked"/>
+            <Button Grid.Row="4" Grid.Column="0" Text="1" BackgroundColor="Gray" TextColor="White" FontSize="50" Clicked="Button_Clicked"/>
+            <Button Grid.Row="4" Grid.Column="1" Text="2" BackgroundColor="Gray" TextColor="White" FontSize="50" Clicked="Button_Clicked"/>
+            <Button Grid.Row="4" Grid.Column="2" Text="3" BackgroundColor="Gray" TextColor="White" FontSize="50" Clicked="Button_Clicked"/>
+            <Button Grid.Row="3" Grid.Column="0" Text="4" BackgroundColor="Gray" TextColor="White" FontSize="50" Clicked="Button_Clicked"/>
+            <Button Grid.Row="3" Grid.Column="1" Text="5" BackgroundColor="Gray" TextColor="White" FontSize="50" Clicked="Button_Clicked"/>
+            <Button Grid.Row="3" Grid.Column="2" Text="6" BackgroundColor="Gray" TextColor="White" FontSize="50" Clicked="Button_Clicked"/>
+            <Button Grid.Row="2" Grid.Column="0" Text="7" BackgroundColor="Gray" TextColor="White" FontSize="50" Clicked="Button_Clicked"/>
+            <Button Grid.Row="2" Grid.Column="1" Text="8" BackgroundColor="Gray" TextColor="White" FontSize="50" Clicked="Button_Clicked"/>
+            <Button Grid.Row="2" Grid.Column="2" Text="9" BackgroundColor="Gray" TextColor="White" FontSize="50" Clicked="Button_Clicked"/>
+
+            <!--Operator and Clear Buttons-->
+            <Button x:Name="clearScreen" Text="CLS" Grid.Row="1" Grid.Column="0" TextColor="Black" FontSize="25" Clicked="Clear_Clicked"/>
+            <Button x:Name="backspace" Text="DEL" Grid.Row="1" Grid.Column="1" TextColor="Black" FontSize="25" Clicked="Clear_Clicked"/>
+            <Button x:Name="incrementCounter" Text="%" Grid.Row="1" Grid.Column="2" TextColor="Black" FontSize="25" Clicked="Operator_Clicked"/>
+            <Button x:Name="showCounter" Text="+/-" Grid.Row="1" Grid.Column="3" TextColor="Black" FontSize="25" Clicked="Operator_Clicked"/>
+            <Button Grid.Row="5" Grid.Column="2" Text="=" TextColor="Black" BackgroundColor="DeepSkyBlue" FontSize="50" Clicked="Button_Clicked"/>
+            <Button Grid.Row="4" Grid.Column="3" Text="-" TextColor="Black" FontSize="50" Clicked="Operator_Clicked"/>
+            <Button Grid.Row="5" Grid.Column="3" Text="+" TextColor="Black" FontSize="50" Clicked="Operator_Clicked"/>
+            <Button Grid.Row="3" Grid.Column="3" Text="*" TextColor="Black" FontSize="50" Clicked="Operator_Clicked"/>
+            <Button Grid.Row="2" Grid.Column="3" Text="/" TextColor="Black" FontSize="50" Clicked="Operator_Clicked"/>
+
+        </Grid>
+        
+    </StackLayout>
+
+</ContentPage>
